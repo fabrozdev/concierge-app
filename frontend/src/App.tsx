@@ -1,8 +1,7 @@
-import './App.css'
+import { ComponentExample } from "@/components/component-example";
 
-function App() {
-
-  return <p className="text-4xl">Concierge App</p>
+export function App() {
+return <ComponentExample />;
 }
 
-export default App
+export default App;
