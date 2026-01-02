@@ -1,7 +1,11 @@
-import { ComponentExample } from "@/components/component-example";
+import Layout from "@/components/common/layout/desktop";
 
 export function App() {
-return <ComponentExample />;
+  return (
+    <Layout>
+      <h1 className="text-2xl font-medium">Concierge App</h1>
+    </Layout>
+  );
 }
 
 export default App;
