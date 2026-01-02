@@ -1,17 +1,20 @@
 name: Frontend Build
 
 on:
-  pull_request:
-    branches:
-      - main
-      - develop
-  pull_request_target:
-    branches:
-      - main
-      - develop
-    types: [opened, synchronize, reopened]
   push:
     branches: [ main, develop, 'feat/**' ]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend-build.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend-build.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
