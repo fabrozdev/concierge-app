@@ -2,7 +2,7 @@ name: Backend Build
 
 on:
   push:
-    branches: [ main, develop, 'feat/**' ]
+    branches: [ main, develop ]
     paths:
       - 'backend/**'
       - '.github/workflows/backend-build.yml'
@@ -13,7 +13,7 @@ on:
       - '.github/workflows/backend-build.yml'
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
