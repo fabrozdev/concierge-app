@@ -1,3 +1,22 @@
 spring:
   application:
     name: app
+  datasource:
+    url: ${DB_URL}
+    username: ${PG_USER}
+    password: ${PG_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 50
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        order_inserts: true
+
+server:
+  servlet:
+    context-path: /api
+  port: 8080
