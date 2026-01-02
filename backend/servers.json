@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "conciergedb",
+      "Group": "Servers",
+      "Port": 5432,
+      "Username": "postgres",
+      "Host": "conciergedb",
+      "SSLMode": "prefer",
+      "MaintenanceDB": "postgres"
+    }
+  }
+}
