@@ -1,4 +1,4 @@
-name: Build Validation
+name: Frontend Build
 
 on:
   pull_request:
@@ -11,9 +11,7 @@ on:
       - develop
     types: [opened, synchronize, reopened]
   push:
-    branches:
-      - main
-      - develop
+    branches: [ main, develop, 'feat/**' ]
 
 jobs:
   build:
